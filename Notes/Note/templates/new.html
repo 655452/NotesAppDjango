@@ -1,0 +1,27 @@
+
+<style>
+    .item{
+        width: 30%;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+
+}
+</style>
+{% extends 'base.html'%}
+    {% block content %}
+    <h1>Notes app</h1>
+    {% if content%}
+            {% for i in content%}
+            <div class="item">
+                <h4>{{i.title}}</h4>
+                {{i.des}}
+            <a href="http://127.0.0.1:8000/delete/{{i.id}}">Delete</a>
+            <a href="http://127.0.0.1:8000/update/{{i.id}}">Update</a>
+            <a href="http://127.0.0.1:8000/read/{{i.id}}">Read</a>
+            </div>
+            {%endfor%}
+    {% endif %}
+
+
+    {% endblock%}

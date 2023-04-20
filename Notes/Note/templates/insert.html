@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block content %}
+
+<h1>Insert </h1>
+<form action="http://127.0.0.1:8000/insert/" method="Post">
+    {% csrf_token %}
+    
+    <label for="">Title</label>
+    <input name="title" type="text">
+    <label for="">Description</label>
+    <input name="des" type="text">
+    <button type="submit">Submit</button>
+</form>
+{% endblock%}
